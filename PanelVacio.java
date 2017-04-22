@@ -7,6 +7,6 @@ public class PanelVacio extends JPanel{
 	public PanelVacio(int x, int y){
 		super();
 		this.setPreferredSize(new Dimension(x,y));
-		this.setBackground(Color.WHITE);
+		//this.setBackground(Color.WHITE);
 	}
 }
