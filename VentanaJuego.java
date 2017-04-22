@@ -1,12 +1,32 @@
-import java.awt.Dimension;
+import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 
 public class VentanaJuego extends JFrame{
+	
+	private PanelVacio pve,
+						pvo,
+						pvs,
+						pvn;
+	private PanelOpciones po;
+	
 	public VentanaJuego(){
-		super("Busca Minas");
+		super("Buscaminas");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setPreferredSize(new Dimension(800,600));
+		this.pve = new PanelVacio(150,600);
+		this.pvn = new PanelVacio(500,50);
+		this.pvo = new PanelVacio(150,600);
+		this.pvs = new PanelVacio(500,50);
+		this.po = new PanelOpciones();
+		
+		this.add(this.pve, BorderLayout.EAST);
+		this.add(this.pvn, BorderLayout.NORTH);
+		this.add(this.pvs, BorderLayout.SOUTH);
+		this.add(this.pvo, BorderLayout.WEST);
+		this.add(this.po, BorderLayout.CENTER);
+		
+		this.pack();
+		
 		this.setVisible(true);
 		
 	}

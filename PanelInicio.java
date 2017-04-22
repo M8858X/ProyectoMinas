@@ -1,4 +1,7 @@
+import javax.swing.JPanel;
 
-public class PanelInicio {
-
+public class PanelInicio extends JPanel{
+	public PanelInicio(){
+		
+	}
 }
