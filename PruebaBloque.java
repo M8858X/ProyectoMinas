@@ -13,13 +13,13 @@ public class PruebaBloque extends JPanel implements ActionListener {
 	private VentanaJuego frame;
 	private PruebaVentana pv;
 	
-	public PruebaBloque(VentanaJuego vi, PruebaVentana vj ){//, int t parametros
+	public PruebaBloque(VentanaJuego vi, PruebaVentana vj, int t){//, int t parametros
 		
 		super();
 		this.frame = vi;
 		this.pv = vj;
-		this.tamaño = 9;// el nueve cambiara a t
-		this.bloques = new Bloque[tamaño][tamaño]; //adentro va a ir el tamaño del que quiere
+		this.tamaño = t;
+		this.bloques = new Bloque[this.tamaño][this.tamaño]; //adentro va a ir el tamaño del que quiere
 		this.setLayout(new GridLayout(tamaño,tamaño));
 		for(int i = 0; i < tamaño; i++)
 		    {
@@ -28,7 +28,7 @@ public class PruebaBloque extends JPanel implements ActionListener {
 		            bloques[i][j] = new Bloque();
 		            bloques[i][j].setBackground(Color.BLUE);
 		            bloques[i][j].setForeground(Color.BLACK);	
-		            bloques[i][j].setPreferredSize(new Dimension(40,40)); //Aqui se va a poner al dimension segun lo que queira el vato
+		            bloques[i][j].setPreferredSize(new Dimension(30,30)); //Aqui se va a poner al dimension segun lo que queira el vato
 		            bloques[i][j].setCordX(j);
 		            bloques[i][j].setCordY(i);
 		            bloques[i][j].addActionListener(this);
@@ -36,7 +36,6 @@ public class PruebaBloque extends JPanel implements ActionListener {
 		        }
 		    }
 	}
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		

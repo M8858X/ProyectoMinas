@@ -7,10 +7,10 @@ public class PruebaVentana extends JFrame{
 	private PruebaBloque pb;
 	private boolean visVentanaJuego;
 	
-	public PruebaVentana(VentanaJuego vi){
+	public PruebaVentana(VentanaJuego vi, int t){
 		super("Buscaminas");
 		this.visVentanaJuego = false;
-		this.pb = new PruebaBloque(vi,this);
+		this.pb = new PruebaBloque(vi,this,t);
 		this.add(pb,BorderLayout.CENTER);
 		PanelVacio pvn = new PanelVacio(500,50);
 		PanelVacio pvo = new PanelVacio(150,600);

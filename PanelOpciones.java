@@ -30,7 +30,6 @@ public class PanelOpciones extends JPanel implements ActionListener{
 		this.visVentanaJuego = false;
 		
 		this.vi = frame;
-		this.vj = new PruebaVentana(this.vi);
 		this.setPreferredSize(new Dimension(500,500));
 		this.setBackground(new Color(101, 142, 198));
 		
@@ -92,16 +91,19 @@ public class PanelOpciones extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == this.op1){
+			this.vj = new PruebaVentana(this.vi, 9);
 			this.visVentanaInicio = false;
 			this.visVentanaJuego = true;
 			this.vi.setVisible(this.visVentanaInicio);
 			this.vj.setVisible(this.visVentanaJuego);
 		}else if(e.getSource() == this.op2){
+			this.vj = new PruebaVentana(this.vi,16);
 			this.visVentanaInicio = false;
 			this.visVentanaJuego = true;
 			this.vi.setVisible(this.visVentanaInicio);
 			this.vj.setVisible(this.visVentanaJuego);
 		} else if(e.getSource() == this.op3){
+			this.vj = new PruebaVentana(this.vi,24);
 			this.visVentanaInicio = false;
 			this.visVentanaJuego = true;
 			this.vi.setVisible(this.visVentanaInicio);
