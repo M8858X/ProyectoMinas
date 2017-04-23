@@ -1,5 +1,3 @@
-import java.awt.Dimension;
-
 import javax.swing.JButton;
 
 public class Bloque extends JButton  {
