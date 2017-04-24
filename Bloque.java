@@ -12,7 +12,6 @@ public class Bloque extends JButton  {
 				cordX,
 				cordY;
 	private JButton bloque;
-	private Color color;
 	
 	
 	public Bloque(){//Inicializa el bloque como default
@@ -24,7 +23,6 @@ public class Bloque extends JButton  {
 		this.minasCerca = 0;
 		this.cordX = 0;
 		this.cordY = 0;
-		this.color = Color.GRAY;
 		
 	}
 	
@@ -51,11 +49,6 @@ public class Bloque extends JButton  {
 	public void setCordY(int cordY){
 		this.cordY=cordY;
 	}
-	
-	public void setColor(Color color){
-		this.color = color;
-		this.repaint();
-	}
 
 	public boolean getMina(){
 		return this.mina;
@@ -75,10 +68,6 @@ public class Bloque extends JButton  {
 	
 	public int getCordY(){
 		return this.cordY;
-	}
-	
-	public Color getColor(){
-		return this.color;
 	}
 }
 

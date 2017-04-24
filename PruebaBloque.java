@@ -62,9 +62,20 @@ public class PruebaBloque extends JPanel implements ActionListener {
 	public void setBloques(Bloque[][] bloques) {
 		this.bloques = bloques;
 	}
+	public void setColorBloques(Color c){
+		for(int i = 0; i < tamaño; i++)
+	    {
+	        for(int j = 0; j < tamaño; j++)
+	        {
+	            bloques[i][j].setBackground(c);	
+	        }
+	        
+	    }
+		
+	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		try{
 		Bloque a = (Bloque) e.getSource();
 		if(a.getMina()==true){
 			for(int i = 0; i < tamaño; i++){
@@ -78,7 +89,6 @@ public class PruebaBloque extends JPanel implements ActionListener {
 			a.setDestapada();
 			int x = a.getCordX();
 			int y = a.getCordY();
-			a.setColor(Color.GREEN);
 			a.setVisible(false);
 
 			
@@ -150,6 +160,9 @@ public class PruebaBloque extends JPanel implements ActionListener {
 				}
 			}
 			//Si al momento de dar click en un bloque hay que validar si los bloques que colindan existen.
+		}
+		}catch(ArrayIndexOutOfBoundsException aiobe){
+			
 		}
 		
 	}
