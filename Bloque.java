@@ -1,14 +1,18 @@
+import java.awt.Color;
+
 import javax.swing.JButton;
 
 public class Bloque extends JButton  {
 
-	private boolean mina;
-	private boolean destapada;
-	private boolean marcada;
-	private int tamaño;
-	private int cordX;
-	private int cordY;
+	private boolean mina,
+					destapada,
+					marcada;
+	private int tamaño,
+				minasCerca,
+				cordX,
+				cordY;
 	private JButton bloque;
+	private Color color;
 	
 	
 	public Bloque(){//Inicializa el bloque como default
@@ -17,8 +21,10 @@ public class Bloque extends JButton  {
 		this.destapada = false;
 		this.marcada = false;
 		this.tamaño = 0;
+		this.minasCerca = 0;
 		this.cordX = 0;
 		this.cordY = 0;
+		this.color = Color.GRAY;
 		
 	}
 	
@@ -34,6 +40,10 @@ public class Bloque extends JButton  {
 		this.marcada = true;
 	}
 	
+	public void setMinasCerca(){
+		this.minasCerca++;
+	}
+	
 	public void setCordX(int cordX){
 		this.cordX=cordX;
 	}
@@ -42,6 +52,11 @@ public class Bloque extends JButton  {
 		this.cordY=cordY;
 	}
 	
+	public void setColor(Color color){
+		this.color = color;
+		this.repaint();
+	}
+
 	public boolean getMina(){
 		return this.mina;
 	}
@@ -62,5 +77,8 @@ public class Bloque extends JButton  {
 		return this.cordY;
 	}
 	
+	public Color getColor(){
+		return this.color;
+	}
 }
 
