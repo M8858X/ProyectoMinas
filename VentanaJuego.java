@@ -45,6 +45,9 @@ public class VentanaJuego extends JFrame{
 	public void setVisibleJuego(boolean visibleJuego) {
 		this.visibleJuego = visibleJuego;
 	}
+	public void setVisVentanaInicio(boolean visVentanaInicio){
+		this.po.setVisVentanaInicio(visVentanaInicio);
+	}
 	public static void main(String [] args){
 		VentanaJuego venj = new VentanaJuego();
 	}

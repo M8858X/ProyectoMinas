@@ -80,11 +80,6 @@ public class PanelOpciones extends JPanel implements ActionListener{
 	public boolean isVisVentanaJuego() {
 		return visVentanaJuego;
 	}
-	
-	public void setVisVentanaJuego(boolean visVentanaJuego) {
-		this.visVentanaJuego = visVentanaJuego;
-	}
-	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		g.drawImage(this.logo,160,0,181,223,null);
@@ -93,19 +88,19 @@ public class PanelOpciones extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == this.op1){
-			this.vj = new PruebaVentana(this.vi, 9);
+			this.vj = new PruebaVentana(this.vi, 9, "10",this,this.vi);
 			this.visVentanaInicio = false;
 			this.visVentanaJuego = true;
 			this.vi.setVisible(this.visVentanaInicio);
 			this.vj.setVisible(this.visVentanaJuego);
 		}else if(e.getSource() == this.op2){
-			this.vj = new PruebaVentana(this.vi,16);
+			this.vj = new PruebaVentana(this.vi,16,"25",this,this.vi);
 			this.visVentanaInicio = false;
 			this.visVentanaJuego = true;
 			this.vi.setVisible(this.visVentanaInicio);
 			this.vj.setVisible(this.visVentanaJuego);
 		} else if(e.getSource() == this.op3){
-			this.vj = new PruebaVentana(this.vi,24);
+			this.vj = new PruebaVentana(this.vi,24,"50",this,this.vi);
 			this.visVentanaInicio = false;
 			this.visVentanaJuego = true;
 			this.vi.setVisible(this.visVentanaInicio);

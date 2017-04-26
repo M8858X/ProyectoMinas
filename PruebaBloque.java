@@ -73,6 +73,9 @@ public class PruebaBloque extends JPanel implements ActionListener {
 	    }
 		
 	}
+	public void setVisibleVentanaInicio(boolean visVentanaInicio){
+		this.frame.setVisVentanaInicio(visVentanaInicio);
+	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		try{

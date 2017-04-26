@@ -6,15 +6,19 @@ import javax.swing.JFrame;
 public class PruebaVentana extends JFrame{
 
 	private PruebaBloque pb;
+	private PanelOpciones po;
+	private VentanaJuego vj;
 	private boolean visVentanaJuego;
 	
-	public PruebaVentana(VentanaJuego vi, int t){
+	public PruebaVentana(VentanaJuego vi, int t, String numMinas, PanelOpciones p, VentanaJuego vj){
 		super("Buscaminas");
 		this.visVentanaJuego = false;
+		this.po = p;
+		this.vj = vj;
 		this.pb = new PruebaBloque(vi,this,t);
 		this.add(pb,BorderLayout.CENTER);
 		PanelVacio pvn = new PanelVacio(500,50);
-		PanelVacio pvo = new PanelVacio(150,600,this);
+		PanelVacio pvo = new PanelVacio(150,600,this, numMinas,this.vj);
 		PanelVacio pvs = new PanelVacio(500,50);
 		PanelVacio pve = new PanelVacio(150,600);
 		
