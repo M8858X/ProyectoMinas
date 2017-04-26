@@ -28,8 +28,8 @@ public class PruebaBloque extends JPanel implements ActionListener {
 		for(int i = 0; i < tamaño; i++)
 		    {
 		        for(int j = 0; j < tamaño; j++)
-		        {
-		            bloques[i][j] = new Bloque();
+		        {		           
+		        	bloques[i][j] = new Bloque();
 		            bloques[i][j].setBackground(Color.BLUE);
 		            bloques[i][j].setForeground(Color.BLACK);	
 		            bloques[i][j].setPreferredSize(new Dimension(30,30)); //Aqui se va a poner al dimension segun lo que queira el vato
@@ -55,6 +55,17 @@ public class PruebaBloque extends JPanel implements ActionListener {
 				bloques[y][x].setMina();
 			//}
 		}
+	}
+	public int CuentaMinas(int ii, int jj){
+	        int nm = 0;
+	        for(int x=ii-1; x<=ii+1; x++)
+	            for(int y=jj-1; y<=jj+1; y++)
+	                if(!(x==ii && y==jj) &&
+	                    x>=0 && x<this.tamaño &&
+	                    y>=0 && y<this.tamaño)
+	                    if(this.bloques[x][y].getMina())
+	                        nm++;
+	        return nm;
 	}
 	public Bloque[][] getBloques() {
 		return bloques;
@@ -92,8 +103,8 @@ public class PruebaBloque extends JPanel implements ActionListener {
 			a.setDestapada();
 			int x = a.getCordX();
 			int y = a.getCordY();
-			a.setVisible(false);
-
+			a.setBackground(new Color(170,255,255));
+			a.setEnabled(false);
 			
 			if((x!=0)||(x!=this.tamaño-1)||(y!=0)||(y!=this.tamaño-1)){
 				
