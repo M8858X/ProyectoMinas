@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JColorChooser;
 import javax.swing.JPanel;
 
 public class PanelOpciones extends JPanel implements ActionListener{
@@ -21,6 +22,7 @@ public class PanelOpciones extends JPanel implements ActionListener{
 	private PruebaVentana vj;
 	private boolean visVentanaInicio,
 					visVentanaJuego;
+	private Color color;
 	
 	public PanelOpciones(VentanaJuego frame){
 		
@@ -60,11 +62,11 @@ public class PanelOpciones extends JPanel implements ActionListener{
 		this.op3.addActionListener(this);
 		this.add(this.op3);
 		
-		this.perz = new JButton ("Personalizar");
+		/*this.perz = new JButton ("Personalizar");
 		this.perz.setPreferredSize(new Dimension(250,35));
 		this.perz.setFont(new Font("Arial",Font.BOLD,25));
 		this.perz.addActionListener(this);
-		this.add(this.perz);
+		this.add(this.perz);*/
 		
 	}
 	public boolean isVisVentanaInicio() {
@@ -108,8 +110,6 @@ public class PanelOpciones extends JPanel implements ActionListener{
 			this.visVentanaJuego = true;
 			this.vi.setVisible(this.visVentanaInicio);
 			this.vj.setVisible(this.visVentanaJuego);
-		}else if (e.getSource() == this.perz){
-			//Para cambiar color del fondo
 		}
 		
 	}
