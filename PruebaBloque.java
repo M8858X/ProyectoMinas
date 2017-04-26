@@ -16,13 +16,13 @@ public class PruebaBloque extends JPanel implements ActionListener {
 	private VentanaJuego frame;
 	private PruebaVentana pv;
 	
-	public PruebaBloque(VentanaJuego vi, PruebaVentana vj, int t){//, int t parametros
+	public PruebaBloque(VentanaJuego vi, PruebaVentana vj, int t, int m){//, int t parametros
 		
 		super();
 		this.frame = vi;
 		this.pv = vj;
 		this.tamaño = t;
-		this.numeroMinas = 10;
+		this.numeroMinas = m;
 		this.bloques = new Bloque[this.tamaño][this.tamaño]; //adentro va a ir el tamaño del que quiere
 		this.setLayout(new GridLayout(tamaño,tamaño));
 		for(int i = 0; i < tamaño; i++)
