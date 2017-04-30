@@ -88,19 +88,19 @@ public class PanelOpciones extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == this.op1){
-			this.vj = new PruebaVentana(this.vi, 9, "10",this,this.vi,10);
+			this.vj = new PruebaVentana(this.vi, 9, 10,this,this.vi,10);
 			this.visVentanaInicio = false;
 			this.visVentanaJuego = true;
 			this.vi.setVisible(this.visVentanaInicio);
 			this.vj.setVisible(this.visVentanaJuego);
 		}else if(e.getSource() == this.op2){
-			this.vj = new PruebaVentana(this.vi,16,"25",this,this.vi, 25);
+			this.vj = new PruebaVentana(this.vi,16,25 ,this,this.vi, 25);
 			this.visVentanaInicio = false;
 			this.visVentanaJuego = true;
 			this.vi.setVisible(this.visVentanaInicio);
 			this.vj.setVisible(this.visVentanaJuego);
 		} else if(e.getSource() == this.op3){
-			this.vj = new PruebaVentana(this.vi,24,"50",this,this.vi,50);
+			this.vj = new PruebaVentana(this.vi,24, 50,this,this.vi,50);
 			this.visVentanaInicio = false;
 			this.visVentanaJuego = true;
 			this.vi.setVisible(this.visVentanaInicio);
