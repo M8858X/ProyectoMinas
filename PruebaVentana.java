@@ -1,6 +1,5 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
-
 import javax.swing.JFrame;
 
 public class PruebaVentana extends JFrame{
@@ -10,7 +9,7 @@ public class PruebaVentana extends JFrame{
 	private VentanaJuego vj;
 	private boolean visVentanaJuego;
 	
-	public PruebaVentana(VentanaJuego vi, int t, String numMinas, PanelOpciones p, VentanaJuego vj, int m){
+	public PruebaVentana(VentanaJuego vi, int t, int numMinas, PanelOpciones p, VentanaJuego vj, int m){
 		super("Buscaminas");
 		this.visVentanaJuego = false;
 		this.po = p;
@@ -18,7 +17,7 @@ public class PruebaVentana extends JFrame{
 		this.pb = new PruebaBloque(vi,this,t,m);
 		this.add(pb,BorderLayout.CENTER);
 		PanelVacio pvn = new PanelVacio(500,50);
-		PanelVacio pvo = new PanelVacio(150,600,this, numMinas,this.vj);
+		PanelVacio pvo = new PanelVacio(150,600,this,numMinas,this.vj);
 		PanelVacio pvs = new PanelVacio(500,50);
 		PanelVacio pve = new PanelVacio(150,600);
 		

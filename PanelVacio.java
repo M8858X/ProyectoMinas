@@ -4,7 +4,6 @@ import java.awt.Font;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
 import javax.swing.JPanel;
@@ -13,6 +12,7 @@ public class PanelVacio extends JPanel implements ActionListener{
 	private JButton color,
 					regresar;
 	private Label numMinas;
+	private int numeroMinas;
 	private PruebaVentana pv;
 	private VentanaJuego vi;
 	
@@ -21,14 +21,15 @@ public class PanelVacio extends JPanel implements ActionListener{
 		this.setPreferredSize(new Dimension(x,y));
 		this.setBackground(new Color(101, 142, 198));
 	}
-	public PanelVacio(int x, int y, PruebaVentana a, String numMinas, VentanaJuego vj){
+	public PanelVacio(int x, int y, PruebaVentana a, int numeroMinas, VentanaJuego vj){
 		super();
 		this.pv = a;
 		this.vi = vj;
+		this.numeroMinas = numeroMinas;
 		this.setPreferredSize(new Dimension(x,y));
 		this.setBackground(new Color(101, 142, 198));
 		
-		this.numMinas = new Label("Minas : "+ numMinas);
+		this.numMinas = new Label("Minas : "+ this.numeroMinas);
 		this.numMinas.setFont(new Font("Arial",Font.BOLD,18));
 		this.add(this.numMinas);
 		
@@ -52,5 +53,16 @@ public class PanelVacio extends JPanel implements ActionListener{
 			this.pv.setVisible(false);
 			this.vi.setVisible(true);
 					}
+	}
+	
+	public void restarMinas(){
+		this.numeroMinas--;
+		this.numMinas = new Label("Minas : "+ this.numeroMinas);
+		this.numMinas.setFont(new Font("Arial",Font.BOLD,18));
+		this.numMinas.repaint();
+	}
+	
+	public int getNumeroMinas(){
+		return this.numeroMinas;
 	}
 }
