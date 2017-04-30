@@ -11,11 +11,10 @@ public class Bloque extends JButton  {
 				minasCerca,
 				cordX,
 				cordY;
-	private JButton bloque;
 	
 	
 	public Bloque(){//Inicializa el bloque como default
-		this.bloque = new JButton();
+		super();
 		this.mina = false;
 		this.destapada = false;
 		this.marcada = false;
@@ -70,4 +69,3 @@ public class Bloque extends JButton  {
 		return this.cordY;
 	}
 }
-
