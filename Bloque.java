@@ -14,18 +14,12 @@ public class Bloque extends JButton  {
 				minasCerca,
 				cordX,
 				cordY;
-<<<<<<< HEAD
-	
-	
-	public Bloque(){//Inicializa el bloque como default
-		super();
-=======
 	private ImageIcon bandera;
 	private Color color;
 	
 	
 	public Bloque(){//Inicializa el bloque como default
->>>>>>> origin/master
+		super();
 		this.mina = false;
 		this.marcada = false;
 		this.tamaño = 0;
@@ -103,13 +97,11 @@ public class Bloque extends JButton  {
 	public int getCordY(){
 		return this.cordY;
 	}
-<<<<<<< HEAD
-}
-=======
+
+
 	
 	public boolean getHabilitada(){
 		return this.habilitada;
 	}
 }
 
->>>>>>> origin/master
