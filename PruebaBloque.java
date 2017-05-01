@@ -79,6 +79,7 @@ public class PruebaBloque extends JPanel implements ActionListener, MouseListene
 	public void setBloques(Bloque[][] bloques) {
 		this.bloques = bloques;
 	}
+
 	public void setColorBloques(Color c){
 		this.color = c;
 		for(int i = 0; i < tamaño; i++)

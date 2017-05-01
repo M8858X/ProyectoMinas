@@ -8,16 +8,23 @@ public class PruebaVentana extends JFrame{
 	private PanelOpciones po;
 	private VentanaJuego vj;
 	private boolean visVentanaJuego;
-	
-	public PruebaVentana(VentanaJuego vi, int t, int numMinas, PanelOpciones p, VentanaJuego vj, int m){
+	private PanelVacio pvo;
+	private int tamaño,
+				numMinas,
+				Minas;
+
+	public PruebaVentana( int t, int numMinas, PanelOpciones p, VentanaJuego vj, int m){
 		super("Buscaminas");
 		this.visVentanaJuego = false;
+		this.tamaño = t;
+		this.numMinas = numMinas;
+		this.Minas = m;
 		this.po = p;
 		this.vj = vj;
-		this.pb = new PruebaBloque(vi,this,t,m);
+		this.pb = new PruebaBloque(this.vj,this,t,m);
 		this.add(pb,BorderLayout.CENTER);
 		PanelVacio pvn = new PanelVacio(500,50);
-		PanelVacio pvo = new PanelVacio(150,600,this,numMinas,this.vj);
+		this.pvo = new PanelVacio(150,600,this,numMinas,this.vj);
 		PanelVacio pvs = new PanelVacio(500,50);
 		PanelVacio pve = new PanelVacio(150,600);
 		
@@ -33,6 +40,26 @@ public class PruebaVentana extends JFrame{
 		
 	}
 	
+	public VentanaJuego getVj() {
+		return vj;
+	}
+
+	public PanelOpciones getPo() {
+		return po;
+	}
+
+	public int getTamaño() {
+		return tamaño;
+	}
+
+	public int getNumMinas() {
+		return numMinas;
+	}
+
+	public int getMinas() {
+		return Minas;
+	}
+
 	public boolean isVisVentanaJuego() {
 		return visVentanaJuego;
 	}

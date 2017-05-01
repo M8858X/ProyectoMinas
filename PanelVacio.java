@@ -10,7 +10,8 @@ import javax.swing.JPanel;
 
 public class PanelVacio extends JPanel implements ActionListener{
 	private JButton color,
-					regresar;
+					regresar,
+					NuevaPartida;
 	private Label numMinas;
 	private int numeroMinas;
 	private PruebaVentana pv;
@@ -41,7 +42,12 @@ public class PanelVacio extends JPanel implements ActionListener{
 		this.regresar.addActionListener(this);
 		this.add(this.regresar);
 		
+		this.NuevaPartida = new JButton ("Nueva Partida");
+		this.NuevaPartida.addActionListener(this);
+		this.add(this.NuevaPartida);
+		
 	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -49,10 +55,16 @@ public class PanelVacio extends JPanel implements ActionListener{
 		Color seleccion = JColorChooser.showDialog(this, "Selecciona el color de la base", Color.BLUE);
 		this.pv.setColorBloques(seleccion);
 		}
-		else{
+		else if (e.getSource() == this.regresar){
 			this.pv.setVisible(false);
 			this.vi.setVisible(true);
 					}
+		else{
+			
+			PruebaVentana nueva = new PruebaVentana(this.pv.getTamaño(),this.pv.getNumMinas(),this.pv.getPo(),this.pv.getVj(),this.pv.getMinas());
+			nueva.setVisible(true);
+			this.pv.setVisible(false);
+		}
 	}
 	
 	public void restarMinas(){
