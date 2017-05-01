@@ -97,8 +97,6 @@ public class Bloque extends JButton  {
 	public int getCordY(){
 		return this.cordY;
 	}
-
-
 	
 	public boolean getHabilitada(){
 		return this.habilitada;

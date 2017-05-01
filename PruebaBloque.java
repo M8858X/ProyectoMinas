@@ -18,13 +18,15 @@ public class PruebaBloque extends JPanel implements ActionListener, MouseListene
 	private Bloque[][] bloques; 
 	private VentanaJuego frame;
 	private PruebaVentana pv;
+	private PanelVacio pvo;
 	private Color color;
 	
-	public PruebaBloque(VentanaJuego vi, PruebaVentana vj, int t, int m){//, int t parametros
+	public PruebaBloque(VentanaJuego vi, PruebaVentana vj, int t, int m, PanelVacio pv){//, int t parametros
 		
 		super();
 		this.frame = vi;
 		this.pv = vj;
+		this.pvo = pv;
 		this.tamaño = t;
 		this.numeroMinas = m;
 		this.bloques = new Bloque[this.tamaño][this.tamaño]; //adentro va a ir el tamaño del que quiere
@@ -79,7 +81,19 @@ public class PruebaBloque extends JPanel implements ActionListener, MouseListene
 	public void setBloques(Bloque[][] bloques) {
 		this.bloques = bloques;
 	}
-
+	/*public void contarHabilitadas(){
+		int numeroHabilitadas = 0;
+		for(int i = 0; i < tamaño; i++)
+	    {
+	        for(int j = 0; j < tamaño; j++)
+	        {		           
+	        	if(bloques[i][j].getHabilitada()){
+	        		numeroHabilitadas ++;
+	        	}
+	        }
+	    }
+		this.pvo.setNumeroMinas(numeroHabilitadas);
+	}*/
 	public void setColorBloques(Color c){
 		this.color = c;
 		for(int i = 0; i < tamaño; i++)
@@ -403,6 +417,8 @@ public class PruebaBloque extends JPanel implements ActionListener, MouseListene
 			
 			
 		}
+		//this.contarHabilitadas();
+		
 		}catch(ArrayIndexOutOfBoundsException aiobe){
 			
 		}
@@ -411,7 +427,19 @@ public class PruebaBloque extends JPanel implements ActionListener, MouseListene
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+		int numeroHabilitadas = 0;
+		for(int i = 0; i < tamaño; i++)
+	    {
+	        for(int j = 0; j < tamaño; j++)
+	        {		           
+	        	if(bloques[i][j].isEnabled()){
+	        		numeroHabilitadas ++;
+	        	}
+	        }
+	    }
+		if (numeroHabilitadas == this.numeroMinas){
+			JOptionPane.showMessageDialog(this, "Ganaste");
+		}
 	}
 	@Override
 	public void mouseEntered(MouseEvent arg0) {

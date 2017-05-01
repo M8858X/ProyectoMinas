@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -47,7 +48,10 @@ public class PanelVacio extends JPanel implements ActionListener{
 		this.add(this.NuevaPartida);
 		
 	}
-	
+	//public void paintComponent(Graphics g){
+		//super.paintComponent(g);
+		//g.drawString("Minas: " + String.valueOf(this.numeroMinas), 50, 150);
+	//}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -73,7 +77,10 @@ public class PanelVacio extends JPanel implements ActionListener{
 		this.numMinas.setFont(new Font("Arial",Font.BOLD,18));
 		this.numMinas.repaint();
 	}
-	
+	public void setNumeroMinas(int numMinas){
+		this.numeroMinas = numMinas;
+		this.repaint();
+	}
 	public int getNumeroMinas(){
 		return this.numeroMinas;
 	}

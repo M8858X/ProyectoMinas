@@ -21,7 +21,7 @@ public class PruebaVentana extends JFrame{
 		this.Minas = m;
 		this.po = p;
 		this.vj = vj;
-		this.pb = new PruebaBloque(this.vj,this,t,m);
+		this.pb = new PruebaBloque(this.vj,this,t,m,pvo);
 		this.add(pb,BorderLayout.CENTER);
 		PanelVacio pvn = new PanelVacio(500,50);
 		this.pvo = new PanelVacio(150,600,this,numMinas,this.vj);
