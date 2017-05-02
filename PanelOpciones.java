@@ -111,7 +111,8 @@ public class PanelOpciones extends JPanel implements ActionListener{
 					+ "\n 2- Solo se debe de pulsar el boton derecho sobre ell cuadro una vez que este seguro que este es una mina"
 					+ "\n 3- Si su elección fue correcta, el cuadro se desabilitara y podra continuar, si fue erronea el cuadro se pondra de color rojo"
 					+ "\n 4- Al pulsas uno de los cuadros este mostrara el numero de minas que se encuentran cerca de él"
-					+ "\n 5- Si pulsas una mina el juego termina", "Resultados", 3);
+					+ "\n 5- Si pulsas una mina el juego termina"
+					+ "\n 6- Encontrar cada cuadro libre te dara 100 puntos", "Resultados", 3);
 		}
 		
 	}
