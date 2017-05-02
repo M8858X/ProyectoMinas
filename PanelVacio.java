@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class PanelVacio extends JPanel implements ActionListener{
@@ -63,7 +64,7 @@ public class PanelVacio extends JPanel implements ActionListener{
 			this.pv.setVisible(false);
 			this.vi.setVisible(true);
 					}
-		else{
+		else if (e.getSource() == this.NuevaPartida){
 			
 			PruebaVentana nueva = new PruebaVentana(this.pv.getTamaño(),this.pv.getNumMinas(),this.pv.getPo(),this.pv.getVj(),this.pv.getMinas());
 			nueva.setVisible(true);

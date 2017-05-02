@@ -432,8 +432,9 @@ public class PruebaBloque extends JPanel implements ActionListener, MouseListene
 	    {
 	        for(int j = 0; j < tamaño; j++)
 	        {		           
-	        	if(bloques[i][j].isEnabled()){
-	        		numeroHabilitadas ++;
+	        	if(bloques[i][j].getMarcada()){
+	        		numeroHabilitadas = numeroHabilitadas + 1;
+	        		System.out.println(String.valueOf(numeroHabilitadas));
 	        	}
 	        }
 	    }
