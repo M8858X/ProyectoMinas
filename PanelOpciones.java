@@ -9,14 +9,15 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class PanelOpciones extends JPanel implements ActionListener{
 	private JButton op1,
 					op2,
 					op3,
-					perz,
-					hidden; 
+					hidden,
+					Instruc; 
 	private Image logo;//Personalizacion del color
 	private VentanaJuego vi;
 	private PruebaVentana vj;
@@ -62,12 +63,11 @@ public class PanelOpciones extends JPanel implements ActionListener{
 		this.op3.addActionListener(this);
 		this.add(this.op3);
 		
-		/*this.perz = new JButton ("Personalizar");
-		this.perz.setPreferredSize(new Dimension(250,35));
-		this.perz.setFont(new Font("Arial",Font.BOLD,25));
-		this.perz.addActionListener(this);
-		this.add(this.perz);*/
-		
+		this.Instruc = new JButton("Instrucciones");
+		this.Instruc.setPreferredSize(new Dimension(250,35));
+		this.Instruc.setFont(new Font("Arial",Font.BOLD,25));
+		this.Instruc.addActionListener(this);
+		this.add(this.Instruc);
 	}
 	public boolean isVisVentanaInicio() {
 		return visVentanaInicio;
@@ -105,6 +105,13 @@ public class PanelOpciones extends JPanel implements ActionListener{
 			this.visVentanaJuego = true;
 			this.vi.setVisible(this.visVentanaInicio);
 			this.vj.setVisible(this.visVentanaJuego);
+		}else if (e.getSource() == this.Instruc){
+			JOptionPane.showMessageDialog(null,"Las reglas del juego son simple:"
+					+ "\n 1- El jugador debe de buscar las minas puestas al azar en la cuadricula"
+					+ "\n 2- Solo se debe de pulsar el boton derecho sobre ell cuadro una vez que este seguro que este es una mina"
+					+ "\n 3- Si su elección fue correcta, el cuadro se desabilitara y podra continuar, si fue erronea el cuadro se pondra de color rojo"
+					+ "\n 4- Al pulsas uno de los cuadros este mostrara el numero de minas que se encuentran cerca de él"
+					+ "\n 5- Si pulsas una mina el juego termina", "Resultados", 3);
 		}
 		
 	}
